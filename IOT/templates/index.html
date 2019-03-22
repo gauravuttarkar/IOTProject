@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+{% load static %}
+<!-- <script src="{% static 'aframe.min.js' %}"></script> -->
+<script src="https://aframe.io/releases/0.8.2/aframe.min.js"></script>
+<!-- include aframe-ar.js -->
+<!-- <script src="{% static 'aframe-ar.js' %}"></script> -->
+
+<script src="https://cdn.rawgit.com/jeromeetienne/AR.js/1.6.2/aframe/build/aframe-ar.js"></script>
+<script type="text/javascript">
+  window.onload = function() {
+  var c = document.getElementById("myCanvas");
+  var ctx = c.getContext("2d");
+  var img = document.getElementById("scream");
+  ctx.drawImage(img, 10, 10);
+};
+</script>
+<body style='margin : 0px; overflow: hidden; font-family: Monospace;'><div style='position: fixed; top: 10px; width:100%; text-align: center; z-index: 1;'>
+  <a href="https://github.com/jeromeetienne/AR.js/" target="_blank">AR.js</a> - example for a-frame
+  <br/>
+  Contact me any time at <a href='https://twitter.com/jerome_etienne' target='_blank'>@jerome_etienne</a>
+</div>
+  <!-- <a-scene embedded arjs='sourceType: image; sourceUrl:../../data/images/armchair.jpg;'> -->
+  <a-scene embedded arjs='sourceType: webcam;' id="myCanvas">
+
+  <!--   <a-sphere position="0 0.5 0" radius="0.5" color="#EF2D5E"></a-sphere> -->
+    <!-- <a-plane position="0 0 0" rotation="-90 0 0" width="1" height="1" color="#7BC8A4"></a-plane> -->
+         <a-image position="-10 -10 0" rotation="-90 0 0" width="1" height="1" src="https://cdn0.iconfinder.com/data/icons/round-arrows-1/134/small_left_blue-512.png"></a-image>
+         <a-image position="0 0 0" rotation="-90 0 0" width="1" height="1" src="https://cdn0.iconfinder.com/data/icons/round-arrows-1/134/small_left_blue-512.png"></a-image>
+    <!-- <a-marker-camera preset='hiro'></a-marker-camera> -->
+    <a-marker-camera type='pattern' url="{% static 'pattern-marker1.patt' %}"></a-marker-camera>
+  </a-scene>
+
+</body>
+</html>
