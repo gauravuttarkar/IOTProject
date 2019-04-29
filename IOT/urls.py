@@ -20,9 +20,11 @@ from django.urls import path, include
 from login import urls as login_urls
 
 urlpatterns = [
-	
+
+	path('test',views.test),
     path('admin/', admin.site.urls),
     path('authenticate/',include(login_urls)),
+    path('<str:objectId>',views.obj),
     path('',views.home),
 
 ]
